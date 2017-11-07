@@ -168,14 +168,19 @@ void j1App::FinishUpdate()
 
 	// TODO 4: Now calculate:
 	// Amount of frames since startup
+	frames++;
 	// Amount of time since game start (use a low resolution timer)
+	float seconds_since_startup = timer.ReadSec();
+
+	float dt = perf_timer.ReadMs() / frames;
 	// Average FPS for the whole game life
+	float avg_fps = 1 / dt;
 	// Amount of ms took the last update
 	// Amount of frames during the last second
 
-	float avg_fps = 0.0f;
-	float seconds_since_startup = 0.0f;
-	float dt = 0.0f;
+	
+	
+	
 	uint32 last_frame_ms = 0;
 	uint32 frames_on_last_update = 0;
 	uint64 frame_count = 0;

@@ -103,6 +103,15 @@ private:
 	p2SString			load_game;
 	mutable p2SString	save_game;
 
+public:
+
+	j1Timer				timer;
+	j1PerfTimer			perf_timer;
+
+	int					frames = 0;
+	float				time_since_start;
+	int					average_fps;
+
 };
 
 extern j1App* App; // No student is asking me about that ... odd :-S
